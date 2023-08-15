@@ -18,7 +18,7 @@ const httpReducers = (currentState, action) => {
 
 const useHttps = () => {
   const [state, dispatch] = useReducer(httpReducers, {
-    data: null,
+    data: "",
     loading: false,
     error: null,
   });
