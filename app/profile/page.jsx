@@ -2,7 +2,7 @@
 import MyProfile from "@components/MyProfile";
 import useHttps from "@hooks/https";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Profile = () => {
   const { data, loading, error, sendRequest } = useHttps();

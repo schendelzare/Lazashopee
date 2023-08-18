@@ -2,9 +2,9 @@
 import Product from "@app/products/page";
 import useHttps from "@hooks/https";
 import Loader from "@ui/loader";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-const Feed = () => {
+const Feed = React.memo(() => {
   const { data, loading, error, sendRequest } = useHttps();
 
   // Search states
@@ -43,7 +43,7 @@ const Feed = () => {
 
   return (
     <div>
-      <div className="flex items-center gap-5 bg-black mb-2">
+      <div className="flex items-center gap-5 bg-primary-orange mb-2 rounded shadow-xl">
         <input
           value={searchText}
           className=" search_bar"
@@ -66,6 +66,6 @@ const Feed = () => {
       )}
     </div>
   );
-};
+});
 
 export default Feed;

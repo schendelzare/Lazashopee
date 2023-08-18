@@ -3,7 +3,7 @@ import Loader from "@ui/loader";
 
 import React, { useEffect, useState } from "react";
 
-const Suggestion = ({ tag }) => {
+const Suggestion = React.memo(({ tag }) => {
   const [filterSearch, setFilterSearch] = useState([]);
   const [data, setData] = useState([]);
 
@@ -53,6 +53,6 @@ const Suggestion = ({ tag }) => {
       )}
     </div>
   );
-};
+});
 
 export default Suggestion;

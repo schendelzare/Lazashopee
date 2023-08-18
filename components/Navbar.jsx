@@ -9,7 +9,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
 import { CartContext } from "@context/context";
 
-const Navbar = () => {
+const Navbar = React.memo(() => {
   const { data: session } = useSession();
   const [providers, setProvider] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -59,11 +59,11 @@ const Navbar = () => {
   }, [items]);
 
   return (
-    <nav className=" flex justify-end font-semibold py-3  items-center mx-5 tracking-tighter gap-2 border-b-2">
+    <nav className=" flex justify-end font-semibold py-3  items-center mx-5 tracking-tighter gap-2 ">
       <Link href="/" className="mr-auto">
-        <h1 className="font-semibold text-3xl bg-black p-1.5 rounded-md">
-          <span className="text-blue-600 ">Laza</span>
-          <span className="text-white ">shopee</span>
+        <h1 className="font-semibold text-3xl p-1.5 rounded-md">
+          <span className="text-my-green ">Laza</span>
+          <span className="text-primary-orange  ">shopee</span>
         </h1>
       </Link>
       <div>
@@ -142,6 +142,6 @@ const Navbar = () => {
       </ul>
     </nav>
   );
-};
+});
 
 export default Navbar;

@@ -66,16 +66,17 @@ body {
 }
 
 .prod_ul {
-  @apply grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 2xl:grid-cols-9  gap-1 items-stretch cursor-pointer;
+  @apply grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 2xl:grid-cols-9  gap-5 items-stretch cursor-pointer;
 }
 .prodlist {
-  @apply border border-gray-300  hover:scale-105 active:scale-95 ease-in-out transition-all rounded-lg p-1 bg-white w-[110px] sm:w-[120px] mx-auto;
+  @apply flex flex-col active:scale-95 ease-in-out transition-all rounded-2xl p-1 shadow-xl w-[110px] sm:w-[120px] mx-auto;
 }
+
 .prod_image {
-  @apply flex items-center justify-center rounded-lg h-[130px] w-auto object-fill bg-slate-100;
+  @apply flex items-center justify-center rounded-lg h-[130px] w-auto object-fill;
 }
 .prodlist_card {
-  @apply flex flex-col  h-[80px];
+  @apply flex flex-col   hover:bg-primary-orange rounded-md;
 }
 
 .form {
@@ -138,4 +139,28 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+.scrollText {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
 }
