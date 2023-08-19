@@ -70,9 +70,9 @@ const CartPage = () => {
   };
 
   return (
-    <div>
+    <div className="">
       {items.length !== 0 ? (
-        <div className="wd">
+        <div className="wd  ">
           <div>
             <ul>
               {items.map((item) => (

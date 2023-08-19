@@ -59,29 +59,29 @@ const Navbar = React.memo(() => {
   }, [items]);
 
   return (
-    <nav className=" flex justify-end font-semibold py-3  items-center mx-5 tracking-tighter gap-2 ">
+    <nav className=" flex justify-end font-semibold py-3  items-center mx-5 tracking-tighter gap-2 bg-my-green ">
       <Link href="/" className="mr-auto">
-        <h1 className="font-semibold text-3xl p-1.5 rounded-md">
-          <span className="text-my-green ">Laza</span>
-          <span className="text-primary-orange  ">shopee</span>
+        <h1 className="font-semibold md:text-3xl p-1.5 rounded-md md:ml-10 animate-fade-down">
+          <span className="text-white">Laza</span>
+          <span className="text-primary-orange ">shopee</span>
         </h1>
       </Link>
       <div>
         {session?.user ? (
-          <div className="flex w-16 justify-between border-2 p-1 rounded-lg">
+          <div className="flex w-16 justify-between border-2 p-1 rounded-lg animate-fade-right bg-white">
             <FaCartArrowDown
               size={25}
-              className={`nav_cart ${cartIsOn ? "scale-125 ease-in-out" : ""}`}
+              className={`nav_cart ${cartIsOn ? "scale-125 ease-in-out" : ""} `}
               onClick={cartHandler}
             />
-            <div className="px-2">{numberOfCartItems}</div>
+            <div className="px-2 text-my-green">{numberOfCartItems}</div>
           </div>
         ) : null}
       </div>
 
       {/* Mobile nav */}
 
-      <ul className=" p-2">
+      <ul className=" p-2 md:mr-10 animate-fade-right z-50">
         <li>
           {session?.user ? (
             <div className="flex flex-col  text-left items-end">
@@ -130,7 +130,7 @@ const Navbar = React.memo(() => {
                       signIn(provider.id);
                     }}
                   >
-                    <span className="text-white ">Sign-in with</span>
+                    <span className=" ">Sign-in with</span>
                     <button type="button" key={provider.name}>
                       <FcGoogle size={25} />
                     </button>

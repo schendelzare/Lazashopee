@@ -1,42 +1,69 @@
+import { CartContext } from "@context/context";
 import { useRouter } from "next/navigation";
-import { AiFillTag } from "react-icons/ai";
-import React from "react";
+
+import React, { useContext } from "react";
 
 const ProductList = React.memo(({ data }) => {
+  const ctx = useContext(CartContext);
+  const { addItem: addToCartHandler } = ctx;
   const router = useRouter();
+
+  const addToCart = (data) => {
+    const item = {
+      id: data._id,
+      creator: data.creator._id,
+      name: data.product_name,
+      price: data.product_price,
+      image: data.image,
+      quantity: data.quantity,
+      amount: 1,
+    };
+
+    addToCartHandler(item);
+  };
 
   const handleProductData = (item) => {
     router.push(`/products/product-data?prodId=${item._id}`);
   };
 
   return (
-    <div className="place-content-center">
-      <ul className="prod_ul tracking-tight">
+    <div className="">
+      <ul className="prod_ul tracking-tight ">
         {data
           ? data.map((item) => (
               <li
                 key={item._id}
-                className="prodlist group relative"
-                onClick={handleProductData.bind(null, item)}
+                className=" group relative w-full animate-fade-right animate-delay-300 animate-once "
               >
-                <div className="prod_image ">
+                <div
+                  className="bg-my-gray"
+                  onClick={handleProductData.bind(null, item)}
+                >
                   <img
                     src={item.image}
                     alt="display picture"
-                    className="rounded-md max-h-[130px] p-1 group-hover:scale-125 transition-transform duration-500"
+                    className="rounded-md  p-1   h-48  group-hover:scale-125 mx-auto"
                   />
                 </div>
                 <div className="">
-                  <div className="flex prodlist_card overflow-hidden  text-sm gap-4 ">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 "></div>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white font-semibold text-center translate-y-[50%] group-hover:translate-y-[0] transition-all ease-in-out ">
-                      <span className="truncate w-[100px] ">
-                        {item.product_name}
+                  <div className=" ">
+                    <div className="flex flex-col animate-fade-right animate-delay-500 animate-once">
+                      <span className=" w-full font-extrabold flex justify-between">
+                        <h3 className="w-auto mr-1">{item.product_name}</h3>
+                        <span className="font-medium">
+                          ${item.product_price.toFixed(2)}
+                        </span>
                       </span>
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity flex-center truncate  font-medium  rounded-lg  w-auto gap-1 mt-2">
-                        <AiFillTag size={15} className="" /> $
-                        {item.product_price.toFixed(2)}
+                      <span className="text-xs text-gray-600 font-inter ">
+                        {item.tag}
                       </span>
+
+                      <button
+                        onClick={addToCart.bind(null, item)}
+                        className="py-1.5  border border-black rounded-full my-2 w-28 group-hover:bg-my-green group-hover:text-white font-semibold"
+                      >
+                        Add to Cart
+                      </button>
                     </div>
                   </div>
                 </div>

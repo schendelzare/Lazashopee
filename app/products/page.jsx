@@ -6,7 +6,7 @@ import Loader from "@ui/loader";
 
 const Product = ({ searchResults, data, searchText }) => {
   return (
-    <div className="mx-5">
+    <div className="mx-10">
       {searchText ? (
         <ProductList data={searchResults} />
       ) : (

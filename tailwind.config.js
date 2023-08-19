@@ -5,6 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
     extend: {
       backgroundImage: {
@@ -16,9 +17,13 @@ module.exports = {
         "primary-orange": "#FF5722",
         "my-black": "#080202",
         "my-blue": "#252B48",
-        "my-green": "#1B9C85",
+        "my-green": "#132E21",
+        "my-gray": "#dde6e7",
+      },
+      fontFamily: {
+        inter: "Inter",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animated")],
 };

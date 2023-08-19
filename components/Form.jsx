@@ -11,8 +11,8 @@ const Form = React.memo(
     }
 
     return (
-      <section className=" flex flex-col items-center lg:items-start lg:ml-28 mt-5 ">
-        <h1 className="font-extrabold text-xl mx-5 mb-5">
+      <section className=" flex flex-col items-center lg:items-start  m-10 ">
+        <h1 className="font-extrabold text-xl mx-5 mb-5 text-my-green">
           {type} <span>your item</span>
         </h1>
         <form onSubmit={submitHandler} className="form indent-1 ">
@@ -25,6 +25,7 @@ const Form = React.memo(
                 setData({ ...productData, product_name: e.target.value })
               }
               required
+              maxLength={19}
             />
           </label>
           <label className="form_label">
@@ -37,6 +38,7 @@ const Form = React.memo(
                 setData({ ...productData, product_price: e.target.value })
               }
               required
+              maxLength={8}
             />
           </label>
           <label className="form_label">
@@ -48,6 +50,7 @@ const Form = React.memo(
                 setData({ ...productData, product_description: e.target.value })
               }
               required
+              maxLength={30}
             />
           </label>
           <label className="form_label">
@@ -113,6 +116,7 @@ const Form = React.memo(
               <img
                 src={productData.image}
                 className="h-52 w-52 object-contain border-2 p-1"
+                alt="prod image"
               />
             ) : null}
           </div>

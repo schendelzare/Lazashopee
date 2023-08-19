@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@300&family=Poppins&family=Raleway:ital,wght@0,400;1,300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,7 +29,7 @@ body {
 }
 
 .wd {
-  @apply flex flex-col  m-auto max-w-[350px] mx-5;
+  @apply flex flex-col m-auto max-w-[400px] mx-10 p-1  rounded-md;
 }
 
 .cart_h1 {
@@ -49,13 +51,13 @@ body {
 }
 
 .button_sign_in {
-  @apply rounded-full  hover:scale-105  active:scale-90 ease-in-out transition-all flex-center;
+  @apply rounded-full  hover:scale-105  active:scale-90 ease-in-out transition-all flex-center cursor-pointer;
 }
 .sign_in {
-  @apply flex-center gap-2 bg-black p-2 rounded active:scale-95;
+  @apply flex-center gap-2  p-2 rounded active:scale-95 cursor-pointer hover:bg-my-green hover:text-white;
 }
 .search_bar {
-  @apply ml-5 my-5 rounded-md outline-none indent-4 text-gray-400 p-1 shadow-lg  border border-gray-200;
+  @apply focus:w-full transition-all ease-in-out duration-1000 my-5 rounded-md outline-none  text-gray-400 p-1 shadow-lg  border border-gray-200 text-center cursor-pointer z-50;
 }
 
 .drop_down {
@@ -66,15 +68,9 @@ body {
 }
 
 .prod_ul {
-  @apply grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 2xl:grid-cols-9  gap-5 items-stretch cursor-pointer;
-}
-.prodlist {
-  @apply flex flex-col active:scale-95 ease-in-out transition-all rounded-2xl p-1 shadow-xl w-[110px] sm:w-[120px] mx-auto;
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 cursor-pointer;
 }
 
-.prod_image {
-  @apply flex items-center justify-center rounded-lg h-[130px] w-auto object-fill;
-}
 .prodlist_card {
   @apply flex flex-col   hover:bg-primary-orange rounded-md;
 }
@@ -92,10 +88,10 @@ body {
   @apply border-2 text-left resize-none rounded-md px-4 pt-1 text-gray-400;
 }
 .form_label {
-  @apply flex flex-col mx-5 text-gray-700 font-normal;
+  @apply flex flex-col mx-5 text-my-green  font-semibold;
 }
 .form_button {
-  @apply border font-semibold bg-black text-white rounded-md p-2 w-[110px] hover:bg-white hover:text-black hover:border-gray-400 h-[45px] active:scale-90 ease-in-out transition-all duration-100;
+  @apply border font-semibold bg-my-green text-white rounded-md p-2 w-[110px] hover:bg-white hover:text-black hover:border-gray-400 h-[45px] active:scale-90 ease-in-out transition-all duration-100;
 }
 .form_cancel {
   @apply border bg-red-500 text-white rounded-full p-2 w-[110px] hover:bg-white hover:text-black hover:border-gray-400;

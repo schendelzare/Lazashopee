@@ -1,11 +1,11 @@
 import Feed from "@components/Feed";
+import Header from "@components/Header";
 
 const Home = () => {
   return (
     <section className="">
-      <h1 className="">
-        <Feed />
-      </h1>
+      <Header />
+      <Feed />
     </section>
   );
 };

@@ -43,13 +43,13 @@ const Feed = React.memo(() => {
 
   return (
     <div>
-      <div className="flex items-center gap-5 bg-primary-orange mb-2 rounded shadow-xl">
+      <div id="feed" className="flex-center items-center gap-5   rounded m-5 ">
         <input
           value={searchText}
-          className=" search_bar"
+          className="search_bar "
           onChange={handleOnChange}
           maxLength="10"
-          placeholder="search on lazashopee"
+          placeholder="Search Product"
         />
       </div>
 

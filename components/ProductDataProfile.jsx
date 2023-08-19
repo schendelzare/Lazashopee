@@ -39,17 +39,17 @@ const ProductDataProfile = React.memo(
         {!isSubmitting && data ? (
           <div>
             <div className="grid grid-cols-1  lg:grid-cols-2 p-2 gap-1  text-orange bg-white rounded-md tracking-tight mx-5 text-gray-700 font-medium ">
-              <div className=" rounded-md flex justify-center items-center min-h-[300px] bg-primary-orange">
+              <div className=" rounded-md flex justify-center items-center min-h-[300px] bg-my-gray">
                 <img
                   src={data.image}
                   alt="display pic"
-                  className="object-contain h-[450px] w-[450px] rounded-md"
+                  className="object-contain h-[450px] w-[450px] rounded-md hover:scale-125"
                 />
               </div>
 
               <div className="flex flex-col  p-2 rounded-md lg:justify-center lg:gap-4">
                 <label className="flex justify-between flex-col ">
-                  <h1 className="flex items-center text-3xl font-medium text-primary-orange   gap-4">
+                  <h1 className="flex items-center text-3xl font-medium text-my-green  gap-4">
                     <span className=" ">{data.product_name} </span>
                   </h1>
                   <span className="flex font-semibold items-center text-lg my-3">
@@ -65,13 +65,13 @@ const ProductDataProfile = React.memo(
                     {session?.user.id === data.creator._id ? (
                       <div className="flex gap-4 rounded px-3 font-semibold">
                         <button
-                          className="text-red-600 hover:scale-110"
+                          className="text-primary-orange hover:scale-110"
                           onClick={deleteProduct.bind(null, data._id)}
                         >
                           Delete
                         </button>
                         <button
-                          className="text-red-600 hover:scale-110"
+                          className="text-primary-orange hover:scale-110"
                           onClick={updateProduct.bind(null, data._id)}
                         >
                           Edit

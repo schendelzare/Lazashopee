@@ -13,9 +13,9 @@ const Cart = React.memo(
     removeToCart,
   }) => {
     return (
-      <section>
-        <div className="flex flex-row border-b  mx-auto">
-          <div className="flex flex-col flex-grow py-3">
+      <section className="bg-my-gray rounded-xl my-5">
+        <div className="flex flex-row mx-auto">
+          <div className="flex flex-col  p-3">
             <h1 className="cart_h1 ">{name}</h1>
             <span>${price}</span>
             <span>Total: ${amount * price}</span>
@@ -30,7 +30,11 @@ const Cart = React.memo(
             </div>
           </div>
 
-          <img src={image} className="w-20 h-20 m-auto rounded-md" />
+          <img
+            src={image}
+            className="w-20 h-20 m-auto rounded-md"
+            alt="image"
+          />
         </div>
       </section>
     );

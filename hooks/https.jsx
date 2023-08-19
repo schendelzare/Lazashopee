@@ -30,6 +30,8 @@ const useHttps = () => {
         const response = await fetch(url, {
           method: method,
           body: body,
+          cache: "force-cache",
+          next: { revalidate: 3600 },
         });
         if (!response.ok) throw new Error(response);
         const data = await response.json();

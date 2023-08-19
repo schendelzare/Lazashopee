@@ -9,7 +9,10 @@ const Suggestion = React.memo(({ tag }) => {
 
   const getProduct = async () => {
     try {
-      const response = await fetch("/api/products");
+      const response = await fetch("/api/products", {
+        cache: "force-cache",
+        next: { revalidate: 3600 },
+      });
       if (!response.ok) throw new Error("Error fetch!");
       const data = await response.json();
 
@@ -43,7 +46,7 @@ const Suggestion = React.memo(({ tag }) => {
 
   return (
     <div className="">
-      <h1 className="mx-5 text-xl font-semibold indent-3">Related Items</h1>
+      <h1 className="m-5 text-xl font-semibold indent-3">Related Items</h1>
       {filterSearch.length !== 0 ? (
         <Product data={filterSearch} />
       ) : (

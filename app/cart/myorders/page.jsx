@@ -6,13 +6,30 @@ import { useSearchParams } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 const MyOrders = () => {
-  const { data, loading, error, sendRequest } = useHttps();
+  const [data, setData] = useState([]);
+  const [loading, setIsLoading] = useState(false);
 
   const searchParams = useSearchParams();
   const orderId = searchParams.get("userId");
 
+  const getdata = async () => {
+    try {
+      setIsLoading(true);
+      const response = await fetch(`/api/products/orders/${orderId}`, {});
+      if (!response.ok) {
+        throw new Error("Failed to fetch data!");
+      }
+      const data = await response.json();
+      setData(data);
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
-    sendRequest(`/api/products/orders/${orderId}`);
+    getdata();
   }, [orderId]);
 
   let newArrayItem = [];

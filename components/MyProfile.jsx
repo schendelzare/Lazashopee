@@ -9,7 +9,7 @@ const MyProfile = React.memo(
       <section className="m-5 tracking-tight ">
         {!isSubmitting && userImage ? (
           <div>
-            <div className="md:grid grid-cols-2 bg-white rounded-md p-2">
+            <div className="md:grid grid-cols-2 bg-my-gray rounded-md p-2">
               <div className="flex">
                 <Image
                   src={userImage}
@@ -20,8 +20,8 @@ const MyProfile = React.memo(
                   priority={true}
                 />
 
-                <div className="flex-center flex-col font-normal text-sm  gap-1 m-auto text-gray-500">
-                  <span className="font-semibold">{user}</span>
+                <div className="flex-center flex-col font-bold text-sm  gap-1 m-auto text-my-black">
+                  <span className="font-extrabold">{user}</span>
                   <span>{email}</span>
                   <span>user_id: {id}</span>
                 </div>
@@ -29,7 +29,7 @@ const MyProfile = React.memo(
               <div className=" flex-center font-medium">{desc}</div>
             </div>
             {myPost ? (
-              <div className="mt-2 ">
+              <div className="mt-2  p-2 rounded-md">
                 <ProductList data={myPost} />
               </div>
             ) : (

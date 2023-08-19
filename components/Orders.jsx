@@ -2,7 +2,7 @@ import React from "react";
 
 const Orders = React.memo(({ name, price, amount, image, date, time }) => {
   return (
-    <section className="mx-2">
+    <section className="">
       <div className="flex flex-row border-b  mx-auto">
         <div className="flex flex-col flex-grow py-3">
           <h1 className="cart_h1 ">{name}</h1>
