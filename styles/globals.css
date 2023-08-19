@@ -54,10 +54,10 @@ body {
   @apply rounded-full  hover:scale-105  active:scale-90 ease-in-out transition-all flex-center cursor-pointer;
 }
 .sign_in {
-  @apply flex-center gap-2  p-2 rounded active:scale-95 cursor-pointer hover:bg-my-green hover:text-white;
+  @apply flex-center gap-2  p-2 rounded active:scale-95 cursor-pointer hover:bg-my-green text-white;
 }
 .search_bar {
-  @apply focus:w-full transition-all ease-in-out duration-1000 my-5 rounded-md outline-none  text-gray-400 p-1 shadow-lg  border border-gray-200 text-center cursor-pointer z-50;
+  @apply focus:w-full  transition-all ease-in-out duration-1000 my-5 rounded-md outline-none  text-gray-400 p-1 shadow-lg  border border-gray-200 text-center cursor-pointer z-50;
 }
 
 .drop_down {
