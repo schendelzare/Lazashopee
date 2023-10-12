@@ -130,7 +130,7 @@ const Navbar = React.memo(() => {
                       signIn(provider.id);
                     }}
                   >
-                    <span className=" ">Sign-in with</span>
+                    <span className="text-white">Sign-in with</span>
                     <button type="button" key={provider.name}>
                       <FcGoogle size={25} />
                     </button>
